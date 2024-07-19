@@ -38,7 +38,7 @@ void calculateAllBarsNumber(ENUM_TIMEFRAMES tf)
    {
     int barsNoInformationArray[];
     ArrayResize(barsNoInformationArray, 0);
-    int fileHandle = FileOpen("barsNumber" + tf, FILE_WRITE);
+    int fileHandle = FileOpen("barsNumber" + IntegerToString(tf), FILE_WRITE);
     
     if(fileHandle != INVALID_HANDLE) {
        for(int i = 0; i < ArraySize(dataArray); i++) {

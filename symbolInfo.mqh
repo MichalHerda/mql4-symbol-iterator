@@ -2,7 +2,7 @@
 
 #include "structsEnumsArrays.mqh"
 //-----------------------------------------------------------------------------------------------------------------
-void writeMarginInfo(dataForWrite &dataArray[]) 
+void writeMarginInfo() 
    {
     int fileHandle = FileOpen("requiredMargin1lot", FILE_WRITE);
        for(int i = 0; i < ArraySize(dataArray); i++) {
