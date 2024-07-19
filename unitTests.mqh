@@ -44,8 +44,9 @@ void calculateAllBarsNumber(ENUM_TIMEFRAMES tf)
        for(int i = 0; i < ArraySize(dataArray); i++) {
          ArrayResize(barsNoInformationArray, ArraySize(barsNoInformationArray) + 1);
          string symbolname = dataArray[i].symbolName;
-         barsNoInformationArray[i] = iBars(symbolname, tf);
-         FileWrite(fileHandle, symbolname, tf, barsNoInformationArray[i]);
+         barsNoInformationArray[i] = iBars(symbolname, tf); 
+         FileWrite(fileHandle, symbolname, tf, barsNoInformationArray[i],
+                   iTime(dataArray[i].symbolName, tf, iBars(symbolname, tf) - 1));
        }
        FileClose(fileHandle);
     }
