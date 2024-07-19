@@ -76,8 +76,7 @@ void testMovingAverageValues(string symbol, ENUM_TIMEFRAMES tf, int number, stri
     }
     else {
          Print("testMovingAverage invalid handle");
-    }  
-     
+    }       
    }
 //-----------------------------------------------------------------------------------------------------------------
 bool isTrendDurationDataCorrect(string symbol, double &movingAverageValuesArray[], int trendDuration)
