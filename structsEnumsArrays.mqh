@@ -32,6 +32,23 @@ struct swing
    double            depth;  
   };
 //-----------------------------------------------------------------------------------------------------------------
+struct swingCalculation
+  {
+   int               barIdx;
+   datetime          barDate;
+   bool              isOverHighTfMa;
+   bool              isOverMediumTfMa;
+   bool              isOverLowTfMa;
+   bool              wasPreviousBarUnderLowTfMa;
+   int               swingNumber;
+   double            highMa;
+   double            mediumMa;
+   double            lowMa;
+   double            highDeviation;
+   double            mediumDeviation;
+   double            lowDeviation;   
+  };
+//-----------------------------------------------------------------------------------------------------------------
 enum sortingKey
   {
    trendDuration,
