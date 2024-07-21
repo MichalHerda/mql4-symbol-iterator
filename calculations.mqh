@@ -59,10 +59,10 @@ double getPriceRatio(double lowestPrice, double highestPrice, double currentPric
 
   }
 //-----------------------------------------------------------------------------------------------------------------
-bool isRisingTrend(string symbol, ENUM_TIMEFRAMES tf, int period)
+bool isRisingTrend(string symbol, ENUM_TIMEFRAMES tf, int period, int idxLater, int idxBefore)
   {
-   double movAveBar1 = iMA(symbol, tf, period, 1, MODE_SMA, PRICE_CLOSE, 0);
-   double movAveBar2 = iMA(symbol, tf, period, 2, MODE_SMA, PRICE_CLOSE, 0);
+   double movAveBar1 = iMA(symbol, tf, period, idxLater, MODE_SMA, PRICE_CLOSE, 0);
+   double movAveBar2 = iMA(symbol, tf, period, idxBefore, MODE_SMA, PRICE_CLOSE, 0);
 
    return movAveBar1 > movAveBar2;
   }

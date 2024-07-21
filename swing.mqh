@@ -43,8 +43,10 @@ void writeSwingCalculationArray(string symbol)
          swingCalculationArray[i].highDeviation = NormalizeDouble(iClose(symbol, lowTimeFrame, i) - 
                                                                     swingCalculationArray[i].highMa, 2); 
                                                                     
-         swingCalculationArray[i].isMediumTrendRising = isRisingTrend(symbol, mediumTimeFrame, movingAveragePeriod);
-         swingCalculationArray[i].isLowTrendRising = isRisingTrend(symbol, lowTimeFrame, movingAveragePeriod);
+         swingCalculationArray[i].isMediumTrendRising = isRisingTrend(symbol, mediumTimeFrame, movingAveragePeriod,
+                                                                      mediumTfBarIdx, mediumTfBarIdx - 1);
+         swingCalculationArray[i].isLowTrendRising = isRisingTrend(symbol, lowTimeFrame, movingAveragePeriod,
+                                                                   i, i -1);
                                                                                                       
          FileWrite(fileHandle,
                    swingCalculationArray[i].barIdx,    
