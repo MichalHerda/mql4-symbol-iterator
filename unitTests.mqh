@@ -50,9 +50,9 @@ void calculateAllBarsNumber(ENUM_TIMEFRAMES tf)
        }
        FileClose(fileHandle);
     }
-    else 
+    else {
          Print("calculateAllBarsNumber invalid handle");
-          
+    }               
    }
 //-----------------------------------------------------------------------------------------------------------------
 void testMovingAverageValues(string symbol, ENUM_TIMEFRAMES tf, int number, string fileName, 
