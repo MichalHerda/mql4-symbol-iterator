@@ -2,6 +2,7 @@
 
 #include "structsEnumsArrays.mqh"
 #include "globalInputs.mqh"
+#include "calculations.mqh"
 
 void writeSwingCalculationArray(string symbol) 
    {
@@ -40,7 +41,11 @@ void writeSwingCalculationArray(string symbol)
                                                                     swingCalculationArray[i].mediumMa, 2);    
                                                                                                                     
          swingCalculationArray[i].highDeviation = NormalizeDouble(iClose(symbol, lowTimeFrame, i) - 
-                                                                    swingCalculationArray[i].highMa, 2);                                           
+                                                                    swingCalculationArray[i].highMa, 2); 
+                                                                    
+         swingCalculationArray[i].isMediumTrendRising = isRisingTrend(symbol, mediumTimeFrame, movingAveragePeriod);
+         swingCalculationArray[i].isLowTrendRising = isRisingTrend(symbol, lowTimeFrame, movingAveragePeriod);
+                                                                                                      
          FileWrite(fileHandle,
                    swingCalculationArray[i].barIdx,    
                    swingCalculationArray[i].barDate,
@@ -48,7 +53,9 @@ void writeSwingCalculationArray(string symbol)
                    swingCalculationArray[i].mediumMa,
                    swingCalculationArray[i].highMa,
                    swingCalculationArray[i].mediumDeviation,
-                   swingCalculationArray[i].highDeviation);                                   
+                   swingCalculationArray[i].highDeviation,   
+                   swingCalculationArray[i].isMediumTrendRising,
+                   swingCalculationArray[i].isLowTrendRising);                          
        }
        FileClose(fileHandle);
      }

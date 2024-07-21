@@ -46,7 +46,9 @@ struct swingCalculation
    double            lowMa;
    double            highDeviation;
    double            mediumDeviation;
-   double            lowDeviation;   
+   double            lowDeviation;
+   bool              isMediumTrendRising;
+   bool              isLowTrendRising;   
   };
 //-----------------------------------------------------------------------------------------------------------------
 enum sortingKey
