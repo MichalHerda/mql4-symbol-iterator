@@ -73,6 +73,7 @@ dataForWrite dataArray[];
 dataForSort sortingDataArray[];
 trend trendArray[];
 swing swingArray[];
+swingCalculation swingCalculationArray[];
 //-----------------------------------------------------------------------------------------------------------------
 string forbiddenSymbolsAdmirals[] = {"USDZAR-Z", "USDZAR", "USDUAH-Z", "USDUAH", "USDTHB", "USDSGD", "USDSEK",
                                      "USDRON-Z", "USDPEN", "USDNOK", "USDMXN-Z", "USDMXN", "USDJOD-Z", "USDJOD",

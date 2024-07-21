@@ -5,7 +5,7 @@
 
 void writeSwingCalculationArray(string symbol) 
    {
-    swingCalculation swingCalculationArray[];
+    ArrayResize(swingCalculationArray, 0);
     Print("swingCalculationArray size: ", ArraySize(swingCalculationArray));
     
     int allBarsAvailable = iBars(symbol, lowTimeFrame);
