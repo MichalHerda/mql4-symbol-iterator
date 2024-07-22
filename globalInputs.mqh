@@ -13,4 +13,5 @@ extern sortingKey sortingData = trendDuration;
 extern sortType usedSorting = selection;
 extern bool includeShares = false;
 extern ENUM_TIMEFRAMES swingsTimeFrame = PERIOD_M30;
+extern color lowTimeFrameRectColor = clrMidnightBlue;   
 //-----------------------------------------------------------------------------------------------------------------
