@@ -14,4 +14,6 @@ extern sortType usedSorting = selection;
 extern bool includeShares = false;
 extern ENUM_TIMEFRAMES swingsTimeFrame = PERIOD_M30;
 extern color lowTimeFrameRectColor = clrMidnightBlue;   
+extern color firstLowBarLineColor = clrCoral;
+extern color firstImaPeriodBarColor = clrAqua;
 //-----------------------------------------------------------------------------------------------------------------
