@@ -154,3 +154,7 @@ double getConsolidationFactor(string symbol, ENUM_TIMEFRAMES tf, int period)
       double consolidationFactor = 0;
       return consolidationFactor;         
    }
+//-----------------------------------------------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------------------------------------------   
