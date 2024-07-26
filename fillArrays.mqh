@@ -30,7 +30,9 @@ void fillDataArrayWithElements(string symbolName, bool risingTrend, int trendDur
       ArrayResize(dataArray, ArraySize(dataArray) + 1);
       dataArray[ArraySize(dataArray) - 1] = arrayElement;
       
-      testMovingAverageValues(symbolName, mediumTimeFrame, trendDuration + 5, symbolName + "_iMA", 6, trendDuration);
+      if(risingTrend) {
+         testMovingAverageValues(symbolName, mediumTimeFrame, trendDuration + 5, symbolName + "_iMA", 6, trendDuration);
+      }
    }
   }
 //-----------------------------------------------------------------------------------------------------------------

@@ -9,7 +9,7 @@ struct dataForWrite
    datetime          trendOpenTime;
    double            priceRatio;
    double            trendStrength;
-   double            consolidationFactor;
+   //double            consolidationFactor;
   };
 //-----------------------------------------------------------------------------------------------------------------
 struct trend 
