@@ -50,10 +50,6 @@ void fillSortingDataArrayWithElements(sortingKey structElement)
      }
 
    dataForSort arrayElement;
-   //int fileHandle = FileOpen(sortFileName, FILE_WRITE);
-
-   //if(fileHandle != INVALID_HANDLE)
-   //  {
 
       for(int i = 0; i < arraySize; i++)
         {
@@ -82,15 +78,8 @@ void fillSortingDataArrayWithElements(sortingKey structElement)
               
          ArrayResize(sortingDataArray, ArraySize(sortingDataArray) + 1);
          sortingDataArray[ArraySize(sortingDataArray) - 1] = arrayElement;
-         //FileWrite(fileHandle, "symbol: ", sortingDataArray[i].symbolName, "  ", EnumToString(structElement), ": ", sortingDataArray[i].sortingData);
-         //Print("sorting data value: ", sortingDataArray[i].sortingData);
+         
         }
-//      FileClose(fileHandle);
-//     }
-//   else
-//     {
-//      Print("sortFile opening failed!");
-//     }
   }
 //-----------------------------------------------------------------------------------------------------------------
 void writeSortedArray(sortingKey structElement, string fileName)
