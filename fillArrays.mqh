@@ -87,13 +87,34 @@ void writeSortedArray(sortingKey structElement, string fileName)
 
    int arraySize = ArraySize(sortingDataArray);
    int fileHandle = FileOpen(fileName, FILE_WRITE);
-
+   
+   string enumSortingKey = EnumToString(structElement);
+   
    for(int i = 0; i < arraySize; i++)
      {
       if(fileHandle != INVALID_HANDLE)
         {
-         FileWrite(fileHandle, i ," symbol: ", sortingDataArray[i].symbolName, 
-                   EnumToString(structElement), ": ", sortingDataArray[i].sortingData);
+         if( (enumSortingKey == "trendDuration") && 
+             (sortingDataArray[i].sortingData >= trendDurationFilterLow && 
+              sortingDataArray[i].sortingData <= trendDurationFilterHigh ) ) {
+              
+                  FileWrite(fileHandle, i ," symbol: ", sortingDataArray[i].symbolName, 
+                            EnumToString(structElement), ": ", sortingDataArray[i].sortingData);
+         }    
+         else if( (enumSortingKey == "priceRatio") && 
+                  (sortingDataArray[i].sortingData >= priceRatioFilterLow && 
+                   sortingDataArray[i].sortingData <= priceRatioFilterHigh ) ) {
+                   
+                        FileWrite(fileHandle, i ," symbol: ", sortingDataArray[i].symbolName, 
+                                  EnumToString(structElement), ": ", sortingDataArray[i].sortingData);
+         }  
+         else if( (enumSortingKey == "trendStrength") && 
+                  (sortingDataArray[i].sortingData >= trendStrengthFilterLow && 
+                   sortingDataArray[i].sortingData <= trendStrengthFilterHigh ) ) {
+                   
+                        FileWrite(fileHandle, i ," symbol: ", sortingDataArray[i].symbolName, 
+                                  EnumToString(structElement), ": ", sortingDataArray[i].sortingData);
+         }                
         }
       else
         {
