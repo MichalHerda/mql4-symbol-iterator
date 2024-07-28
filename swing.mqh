@@ -1,9 +1,9 @@
 #property strict
-
+//-----------------------------------------------------------------------------------------------------------------
 #include "structsEnumsArrays.mqh"
 #include "globalInputs.mqh"
 #include "calculations.mqh"
-
+//-----------------------------------------------------------------------------------------------------------------
 void writeSwingCalculationArray(string symbol) 
    {
     ArrayResize(swingCalculationArray, 0);
@@ -64,3 +64,16 @@ void writeSwingCalculationArray(string symbol)
      else
          Print("swing invalid handle");    
    }
+//-----------------------------------------------------------------------------------------------------------------
+void appendSwingArray()
+   {
+      ArrayResize(swingArray, 0);
+      
+      int allBarsAvailable = iBars(Symbol(), lowTimeFrame);
+      int firstBarIdx = allBarsAvailable - movingAveragePeriod - 1;
+      
+      for(int i = firstBarIdx - 1; i >= 0; i--) {
+      
+      }
+   }
+//-----------------------------------------------------------------------------------------------------------------
