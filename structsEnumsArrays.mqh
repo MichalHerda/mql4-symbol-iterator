@@ -37,6 +37,8 @@ struct swing
    int               duration;
    double            depth;  
    swingType         type;
+   datetime          start;
+   datetime          end;
   };
 //-----------------------------------------------------------------------------------------------------------------
 struct swingCalculation
