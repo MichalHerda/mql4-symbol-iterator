@@ -16,7 +16,7 @@ void calculateIsPriceAboveMovingAverageOnTrendBegin()
             datetime trendBegin = iTime(dataArray[i].symbolName, mediumTimeFrame, dataArray[i].trendDuration);
             int lowTrendBeginShift = iBarShift(dataArray[i].symbolName, lowTimeFrame, trendBegin);
             double openLowTrendPrice = iOpen(dataArray[i].symbolName, lowTimeFrame, lowTrendBeginShift);
-            double openLowMovingAve = iMA(dataArray[i].symbolName, lowTimeFrame, movingAveragePeriod, 
+            double openLowMovingAve = iMA(dataArray[i].symbolName, lowTimeFrame, lowMovingAveragePeriod, 
                                              lowTrendBeginShift, MODE_SMA, PRICE_CLOSE, 0);
             
             if(openLowTrendPrice >= openLowMovingAve) trendBeginArray[i] = true;
@@ -66,7 +66,7 @@ void testMovingAverageValues(string symbol, ENUM_TIMEFRAMES tf, int number, stri
        FileWrite(fileHandle, "trend ", tf," start at: ", iTime(symbol, tf, trendDuration));
        for(int i = 0; i < number; i++) {         
          ArrayResize(movingAverageValuesArray, ArraySize(movingAverageValuesArray) + 1);
-         movingAverageValuesArray[i] = iMA(symbol, mediumTimeFrame, movingAveragePeriod, i + 1, MODE_SMA, PRICE_CLOSE, 0);
+         movingAverageValuesArray[i] = iMA(symbol, mediumTimeFrame, mediumMovingAveragePeriod, i + 1, MODE_SMA, PRICE_CLOSE, 0);
          movingAverageValuesArray[i] = NormalizeDouble(movingAverageValuesArray[i], decimalPlaces);
          FileWrite(fileHandle, i + 1, movingAverageValuesArray[i]);
        }
