@@ -3,7 +3,7 @@
 #include "structsEnumsArrays.mqh"
 //-----------------------------------------------------------------------------------------------------------------
 extern int movingAveragePeriod = 20;
-extern movAveCombination maCombination = ALL;
+movAveCombination maCombination;
 extern bool lowTimeFrameCriterium = true;
 extern bool mediumTimeFrameCriterium = true;
 extern bool highTimeFrameCriterium = true; 
@@ -29,4 +29,18 @@ double priceRatioFilterHigh = 100;
 double trendStrengthFilterLow = 1;
 double trendStrengthFilterHigh = 100; 
 int barsNo = 30;
+//-----------------------------------------------------------------------------------------------------------------
+void setMaCombination() {
+    int combination = (lowTimeFrameCriterium << 2) | (mediumTimeFrameCriterium << 1) | highTimeFrameCriterium;
+    switch (combination) {
+        case 0: maCombination = NONE; break;
+        case 1: maCombination = HIGH; break;
+        case 2: maCombination = MEDIUM; break;
+        case 3: maCombination = MEDIUM_HIGH; break;
+        case 4: maCombination = LOW; break;
+        case 5: maCombination = LOW_HIGH; break;
+        case 6: maCombination = LOW_MEDIUM; break;
+        case 7: maCombination = ALL; break;
+    }
+}
 //-----------------------------------------------------------------------------------------------------------------
