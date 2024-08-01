@@ -3,6 +3,7 @@
 #include "structsEnumsArrays.mqh"
 //-----------------------------------------------------------------------------------------------------------------
 extern int movingAveragePeriod = 20;
+extern movAveCombination maCombination = ALL;
 extern bool lowTimeFrameCriterium = true;
 extern bool mediumTimeFrameCriterium = true;
 extern bool highTimeFrameCriterium = true; 

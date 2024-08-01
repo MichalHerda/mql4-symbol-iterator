@@ -56,6 +56,7 @@ struct swingCalculation
    double            highDeviation;
    double            mediumDeviation;
    double            lowDeviation;
+   bool              isHighTrendRising;
    bool              isMediumTrendRising;
    bool              isLowTrendRising; 
    string            symbol;  
