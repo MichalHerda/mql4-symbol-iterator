@@ -32,7 +32,7 @@ double getAllTimeMinimumPrice(string symbol)
 //-----------------------------------------------------------------------------------------------------------------
 double getAllTimeMaximumPrice(string symbol) 
    {
-    int highestMonthlyBarIdx = iHighest(symbol, PERIOD_MN1, MODE_LOW);
+    int highestMonthlyBarIdx = iHighest(symbol, PERIOD_MN1, MODE_HIGH);
     
     return iHigh(symbol, PERIOD_MN1, highestMonthlyBarIdx);    
    }   

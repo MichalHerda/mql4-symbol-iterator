@@ -5,8 +5,8 @@
 extern int movingAveragePeriod = 20;
 movAveCombination maCombination;
 extern bool lowTimeFrameCriterium = true;
-extern bool mediumTimeFrameCriterium = true;
-extern bool highTimeFrameCriterium = true; 
+extern bool mediumTimeFrameCriterium = false;
+extern bool highTimeFrameCriterium = false; 
 extern int swingMovingAveragePeriod = 10;
 extern ENUM_TIMEFRAMES swingsTimeFrame = PERIOD_M30;
 extern int lowMovingAveragePeriod = 20;
@@ -17,6 +17,7 @@ extern int highMovingAveragePeriod = 5;
 extern ENUM_TIMEFRAMES highTimeFrame = PERIOD_D1;
 string allFileName = "allData.txt";
 extern sortingKey sortingData = trendDuration;
+extern bool writingIndicatorsEnable = true;
 sortType usedSorting = selection;
 bool includeShares = false;
 color lowTimeFrameRectColor = clrMidnightBlue;   
