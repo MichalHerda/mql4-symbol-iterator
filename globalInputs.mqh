@@ -2,7 +2,10 @@
 //-----------------------------------------------------------------------------------------------------------------
 #include "structsEnumsArrays.mqh"
 //-----------------------------------------------------------------------------------------------------------------
-extern int movingAveragePeriod = 10;
+extern int movingAveragePeriod = 20;
+extern bool lowTimeFrameCriterium = true;
+extern bool mediumTimeFrameCriterium = true;
+extern bool highTimeFrameCriterium = true; 
 extern int swingMovingAveragePeriod = 10;
 extern ENUM_TIMEFRAMES swingsTimeFrame = PERIOD_M30;
 extern int lowMovingAveragePeriod = 20;
