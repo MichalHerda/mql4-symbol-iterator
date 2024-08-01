@@ -8,7 +8,7 @@ extern bool lowTimeFrameCriterium = true;
 extern bool mediumTimeFrameCriterium = false;
 extern bool highTimeFrameCriterium = false; 
 extern int swingMovingAveragePeriod = 10;
-extern ENUM_TIMEFRAMES swingsTimeFrame = PERIOD_M30;
+ENUM_TIMEFRAMES swingsTimeFrame;
 extern int lowMovingAveragePeriod = 20;
 extern ENUM_TIMEFRAMES lowTimeFrame = PERIOD_M30;
 extern int mediumMovingAveragePeriod = 10;
@@ -42,6 +42,20 @@ void setMaCombination() {
         case 5: maCombination = LOW_HIGH; break;
         case 6: maCombination = LOW_MEDIUM; break;
         case 7: maCombination = ALL; break;
+    }
+}
+//-----------------------------------------------------------------------------------------------------------------
+void setSwingTimeFrame() {
+   int combination = (lowTimeFrameCriterium << 2) | (mediumTimeFrameCriterium << 1) | highTimeFrameCriterium;
+   switch (combination) {
+        case 0: swingsTimeFrame = lowTimeFrame; break;
+        case 1: swingsTimeFrame = highTimeFrame; break;
+        case 2: swingsTimeFrame = mediumTimeFrame; break;
+        case 3: swingsTimeFrame = mediumTimeFrame; break;
+        case 4: swingsTimeFrame = lowTimeFrame; break;
+        case 5: swingsTimeFrame = lowTimeFrame; break;
+        case 6: swingsTimeFrame = lowTimeFrame; break;
+        case 7: swingsTimeFrame = lowTimeFrame; break;
     }
 }
 //-----------------------------------------------------------------------------------------------------------------
