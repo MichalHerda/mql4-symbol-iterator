@@ -71,7 +71,7 @@ void testMovingAverageValues(string symbol, ENUM_TIMEFRAMES tf, int number, stri
          FileWrite(fileHandle, i + 1, movingAverageValuesArray[i]);
        }
         
-       FileWrite(fileHandle, "trendDuration correct: ", isTrendDurationDataCorrect(symbol, movingAverageValuesArray, trendDuration));
+       //FileWrite(fileHandle, "trendDuration correct: ", isTrendDurationDataCorrect(symbol, movingAverageValuesArray, trendDuration));
        FileClose(fileHandle);
        
     }
