@@ -30,6 +30,7 @@ double priceRatioFilterHigh = 100;
 double trendStrengthFilterLow = 1;
 double trendStrengthFilterHigh = 100; 
 int barsNo = 30;
+bool timerInitialized = false;
 //-----------------------------------------------------------------------------------------------------------------
 void setMaCombination() {
     int combination = (lowTimeFrameCriterium << 2) | (mediumTimeFrameCriterium << 1) | highTimeFrameCriterium;
