@@ -9,6 +9,7 @@ struct dataForWrite
    datetime          trendOpenTime;
    double            priceRatio;
    double            trendStrength;
+   double            mainAdx;
    //double            consolidationFactor;
   };
 //-----------------------------------------------------------------------------------------------------------------
@@ -67,6 +68,7 @@ enum sortingKey
    trendDuration,
    priceRatio,
    trendStrength,
+   mainAdx,
   };
 //-----------------------------------------------------------------------------------------------------------------
 enum sortType

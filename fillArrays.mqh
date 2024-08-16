@@ -8,7 +8,7 @@
 //-----------------------------------------------------------------------------------------------------------------
 void fillDataArrayWithElements(string symbolName, bool risingTrend, int trendDuration, 
                                datetime trendOpenTime,
-                               double priceRatio, double trendStrength)
+                               double priceRatio, double trendStrength, double mainAdx)
   { 
    if(isShare(symbolName) && !includeShares) {
       //Print("shares are not writing");
@@ -26,7 +26,8 @@ void fillDataArrayWithElements(string symbolName, bool risingTrend, int trendDur
       arrayElement.trendOpenTime = trendOpenTime;
       arrayElement.priceRatio = priceRatio;
       arrayElement.trendStrength = trendStrength;
-   
+      arrayElement.mainAdx = mainAdx;
+      
       ArrayResize(dataArray, ArraySize(dataArray) + 1);
       dataArray[ArraySize(dataArray) - 1] = arrayElement;
       
@@ -70,6 +71,10 @@ void fillSortingDataArrayWithElements(sortingKey structElement)
                case trendStrength:
                   arrayElement.sortingData = dataArray[i].trendStrength;
                   break;
+                  
+               case mainAdx:
+                  arrayElement.sortingData = dataArray[i].mainAdx;
+                  break;   
    
                default:
                   Print("enumeration error");
@@ -114,7 +119,11 @@ void writeSortedArray(sortingKey structElement, string fileName)
                    
                         FileWrite(fileHandle, i ," symbol: ", sortingDataArray[i].symbolName, 
                                   EnumToString(structElement), ": ", sortingDataArray[i].sortingData);
-         }                
+         }   
+         else if(enumSortingKey == "mainAdx") {
+                        FileWrite(fileHandle, i ," symbol: ", sortingDataArray[i].symbolName, 
+                                  EnumToString(structElement), ": ", sortingDataArray[i].sortingData);
+         }             
         }
       else
         {
